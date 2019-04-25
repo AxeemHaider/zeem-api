@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<queue-entries>
+    <queue>
+        <name>create-feed</name>
+        <rate>5/s</rate>
+    </queue>
+    <queue>
+        <name>create-story</name>
+        <rate>5/s</rate>
+    </queue>
+    <queue>
+        <name>follower-feed</name>
+        <rate>5/s</rate>
+    </queue>
+    <queue>
+        <name>create-comment</name>
+        <rate>5/s</rate>
+    </queue>
+    <queue>
+        <name>create-story-comment</name>
+        <rate>5/s</rate>
+    </queue>
+    <queue>
+        <name>user-suggestion</name>
+        <rate>5/s</rate>
+    </queue>
+</queue-entries>

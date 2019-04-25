@@ -1,0 +1,3077 @@
+{
+ "swagger": "2.0",
+ "info": {
+  "version": "1.0.0",
+  "title": "octabyte-zeem.appspot.com"
+ },
+ "host": "octabyte-zeem.appspot.com",
+ "basePath": "/_ah/api",
+ "schemes": [
+  "https"
+ ],
+ "consumes": [
+  "application/json"
+ ],
+ "produces": [
+  "application/json"
+ ],
+ "paths": {
+  "/zeem/v1/acceptFriendRequest/{userId}/{requestId}/{friendId}": {
+   "post": {
+    "operationId": "ZeemAcceptFriendRequest",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "requestId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "friendId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/TaskComplete"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/addFriend/{userId}/{userPhone}/{friendPhone}": {
+   "post": {
+    "operationId": "ZeemAddFriend",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "userPhone",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "friendPhone",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response"
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/appinfo": {
+   "get": {
+    "operationId": "ZeemGetAppInfo",
+    "parameters": [ ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/AppInfo"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/blockFriend/{userId}/{friendId}": {
+   "post": {
+    "operationId": "ZeemBlockFriend",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "friendId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/TaskComplete"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/checkRegistration/{phone}": {
+   "post": {
+    "operationId": "ZeemCheckRegistration",
+    "parameters": [
+     {
+      "name": "phone",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/Registered"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/checkUsername/{username}/{fullName}": {
+   "post": {
+    "operationId": "ZeemCheckUsername",
+    "parameters": [
+     {
+      "name": "username",
+      "in": "path",
+      "required": true,
+      "type": "string"
+     },
+     {
+      "name": "fullName",
+      "in": "path",
+      "required": true,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/Username"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/comment/{commentSafeKey}": {
+   "delete": {
+    "operationId": "ZeemDeleteComment",
+    "parameters": [
+     {
+      "name": "commentSafeKey",
+      "in": "path",
+      "required": true,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response"
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/commentStar/{userId}/{commentSafeKey}/{postMode}": {
+   "post": {
+    "operationId": "ZeemCommentStar",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "commentSafeKey",
+      "in": "path",
+      "required": true,
+      "type": "string"
+     },
+     {
+      "name": "postMode",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "enum": [
+       "PRIVATE",
+       "PUBLIC"
+      ]
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response"
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/commentresponse/{userId}/{postId}": {
+   "get": {
+    "operationId": "ZeemGetComments",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "postId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "cursor",
+      "in": "query",
+      "required": false,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/CommentResponse"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/createList/{userId}": {
+   "post": {
+    "operationId": "ZeemCreateList",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "memberIds",
+      "in": "query",
+      "required": false,
+      "type": "array",
+      "items": {
+       "type": "integer",
+       "format": "int64"
+      },
+      "collectionFormat": "multi"
+     },
+     {
+      "in": "body",
+      "name": "body",
+      "required": false,
+      "schema": {
+       "$ref": "#/definitions/UserList"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response"
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/createPost/{userId}": {
+   "post": {
+    "operationId": "ZeemCreatePost",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "tagUserId",
+      "in": "query",
+      "required": false,
+      "type": "array",
+      "items": {
+       "type": "integer",
+       "format": "int64"
+      },
+      "collectionFormat": "multi"
+     },
+     {
+      "in": "body",
+      "name": "body",
+      "required": false,
+      "schema": {
+       "$ref": "#/definitions/Post"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/Post"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/createStory/{userId}/{mode}": {
+   "post": {
+    "operationId": "ZeemCreateStory",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "mode",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "enum": [
+       "PRIVATE",
+       "PUBLIC"
+      ]
+     },
+     {
+      "in": "body",
+      "name": "body",
+      "required": false,
+      "schema": {
+       "$ref": "#/definitions/Stories"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/Story"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/discover/{userId}/{offset}": {
+   "post": {
+    "operationId": "ZeemDiscover",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "offset",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int32"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/PostFeed"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/feed/{feedSafeKey}": {
+   "delete": {
+    "operationId": "ZeemDeleteFeed",
+    "parameters": [
+     {
+      "name": "feedSafeKey",
+      "in": "path",
+      "required": true,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response"
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/filterBadgePost/{userId}/{mode}/{badge}": {
+   "post": {
+    "operationId": "ZeemFilterBadgePost",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "mode",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "enum": [
+       "PRIVATE",
+       "PUBLIC"
+      ]
+     },
+     {
+      "name": "badge",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int32"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/PostFeed"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/filterBadgeUser/{userId}/{relation}/{badge}": {
+   "post": {
+    "operationId": "ZeemFilterBadgeUser",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "relation",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "enum": [
+       "FRIEND",
+       "FOLLOWER",
+       "FOLLOWING",
+       "BLOCK_FRIEND",
+       "PUBLIC"
+      ]
+     },
+     {
+      "name": "badge",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int32"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/UserCollection"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/findUser": {
+   "post": {
+    "operationId": "ZeemFindUser",
+    "parameters": [
+     {
+      "name": "username",
+      "in": "query",
+      "required": false,
+      "type": "string"
+     },
+     {
+      "name": "fullName",
+      "in": "query",
+      "required": false,
+      "type": "string"
+     },
+     {
+      "name": "phone",
+      "in": "query",
+      "required": false,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "geoHash",
+      "in": "query",
+      "required": false,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/User"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/follow/{userId}/{followingId}": {
+   "post": {
+    "operationId": "ZeemFollow",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "followingId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response"
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/generateUserSuggestion/{userId}": {
+   "post": {
+    "operationId": "ZeemGenerateUserSuggestion",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response"
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/getListMembers/{listId}": {
+   "get": {
+    "operationId": "ZeemGetListMembers",
+    "parameters": [
+     {
+      "name": "listId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/UserCollection"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/getSinglePost/{userId}/{postSafeKey}": {
+   "get": {
+    "operationId": "ZeemGetSinglePost",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "postSafeKey",
+      "in": "path",
+      "required": true,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/PostFeed"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/getStoriesFeed/{userId}/{mode}": {
+   "get": {
+    "operationId": "ZeemGetStoriesFeed",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "mode",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "enum": [
+       "PRIVATE",
+       "PUBLIC"
+      ]
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/StoryFeedCollection"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/getStoryComments/{storyId}/{storyNum}": {
+   "get": {
+    "operationId": "ZeemGetStoryComments",
+    "parameters": [
+     {
+      "name": "storyId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "storyNum",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int32"
+     },
+     {
+      "name": "cursor",
+      "in": "query",
+      "required": false,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/CommentResponse"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/getTaggedUser/{postId}": {
+   "get": {
+    "operationId": "ZeemGetTaggedUser",
+    "parameters": [
+     {
+      "name": "postId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/UserCollection"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/getUserPost/{userId}": {
+   "get": {
+    "operationId": "ZeemGetUserPost",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "postMode",
+      "in": "query",
+      "required": false,
+      "type": "string",
+      "enum": [
+       "PRIVATE",
+       "PUBLIC"
+      ]
+     },
+     {
+      "name": "cursor",
+      "in": "query",
+      "required": false,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/PostFeed"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/list/{listSafeKey}": {
+   "delete": {
+    "operationId": "ZeemRemoveList",
+    "parameters": [
+     {
+      "name": "listSafeKey",
+      "in": "path",
+      "required": true,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response"
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/listmember/{listId}/{userId}": {
+   "delete": {
+    "operationId": "ZeemRemoveListMember",
+    "parameters": [
+     {
+      "name": "listId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response"
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/nearBy/{userId}/{latitude}/{longitude}/{Relation}": {
+   "post": {
+    "operationId": "ZeemNearBy",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "latitude",
+      "in": "path",
+      "required": true,
+      "type": "number",
+      "format": "double"
+     },
+     {
+      "name": "longitude",
+      "in": "path",
+      "required": true,
+      "type": "number",
+      "format": "double"
+     },
+     {
+      "name": "Relation",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "enum": [
+       "FRIEND",
+       "FOLLOWER",
+       "FOLLOWING",
+       "BLOCK_FRIEND",
+       "PUBLIC"
+      ]
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/UserCollection"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/notification/{userId}/{mode}": {
+   "get": {
+    "operationId": "ZeemGetNotification",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "mode",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "enum": [
+       "PRIVATE",
+       "PUBLIC"
+      ]
+     },
+     {
+      "name": "cursor",
+      "in": "query",
+      "required": false,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/Notification"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/notification/{userId}/{mode}/{alertId}": {
+   "get": {
+    "operationId": "ZeemGetUpdateNotification",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "mode",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "enum": [
+       "PRIVATE",
+       "PUBLIC"
+      ]
+     },
+     {
+      "name": "alertId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/Notification"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/notification/{userId}/{mode}/{lastNotificationId}": {
+   "delete": {
+    "operationId": "ZeemDeleteNotification",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "mode",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "enum": [
+       "PRIVATE",
+       "PUBLIC"
+      ]
+     },
+     {
+      "name": "lastNotificationId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response"
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/post/{postSafeKey}": {
+   "delete": {
+    "operationId": "ZeemDeletePost",
+    "parameters": [
+     {
+      "name": "postSafeKey",
+      "in": "path",
+      "required": true,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response"
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/postComment/{userId}/{postSafeKey}": {
+   "post": {
+    "operationId": "ZeemPostComment",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "postSafeKey",
+      "in": "path",
+      "required": true,
+      "type": "string"
+     },
+     {
+      "in": "body",
+      "name": "body",
+      "required": false,
+      "schema": {
+       "$ref": "#/definitions/Comment"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/Comment"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/postStar/{userId}/{postSafeKey}": {
+   "post": {
+    "operationId": "ZeemPostStar",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "postSafeKey",
+      "in": "path",
+      "required": true,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response"
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/postStoryComment/{userId}/{storySafeKey}": {
+   "post": {
+    "operationId": "ZeemPostStoryComment",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "storySafeKey",
+      "in": "path",
+      "required": true,
+      "type": "string"
+     },
+     {
+      "in": "body",
+      "name": "body",
+      "required": false,
+      "schema": {
+       "$ref": "#/definitions/StoryComment"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/StoryComment"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/postfeed/{userId}": {
+   "get": {
+    "operationId": "ZeemGetSavedPost",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "cursor",
+      "in": "query",
+      "required": false,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/PostFeed"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/postfeed/{userId}/{alertId}/{mode}": {
+   "get": {
+    "operationId": "ZeemGetUpdateFeed",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "alertId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "mode",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "enum": [
+       "PRIVATE",
+       "PUBLIC"
+      ]
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/PostFeed"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/postfeed/{userId}/{mode}": {
+   "get": {
+    "operationId": "ZeemGetFeed",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "mode",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "enum": [
+       "PRIVATE",
+       "PUBLIC"
+      ]
+     },
+     {
+      "name": "cursor",
+      "in": "query",
+      "required": false,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/PostFeed"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/profileview/{appUserId}": {
+   "get": {
+    "operationId": "ZeemGetProfileView",
+    "parameters": [
+     {
+      "name": "appUserId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "userId",
+      "in": "query",
+      "required": false,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "username",
+      "in": "query",
+      "required": false,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/ProfileView"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/refreshFirebaseToken/{userId}/{firebaseToken}": {
+   "post": {
+    "operationId": "ZeemRefreshFirebaseToken",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "firebaseToken",
+      "in": "path",
+      "required": true,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response"
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/registerUser/{lat}/{lng}": {
+   "post": {
+    "operationId": "ZeemRegisterUser",
+    "parameters": [
+     {
+      "name": "lat",
+      "in": "path",
+      "required": true,
+      "type": "number",
+      "format": "double"
+     },
+     {
+      "name": "lng",
+      "in": "path",
+      "required": true,
+      "type": "number",
+      "format": "double"
+     },
+     {
+      "in": "body",
+      "name": "body",
+      "required": false,
+      "schema": {
+       "$ref": "#/definitions/UserInfoHolder"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/User"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/relationship/{myUserId}/{userId}": {
+   "get": {
+    "operationId": "ZeemGetRelationship",
+    "parameters": [
+     {
+      "name": "myUserId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/Relationship"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/report/{userId}/{postSafeKey}/{reportType}": {
+   "post": {
+    "operationId": "ZeemReport",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "postSafeKey",
+      "in": "path",
+      "required": true,
+      "type": "string"
+     },
+     {
+      "name": "reportType",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "enum": [
+       "ANTI_RELIGION",
+       "OTHER",
+       "SPAM",
+       "SEXUAL_CONTENT"
+      ]
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response"
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/savePost/{userId}/{postSafeKey}": {
+   "post": {
+    "operationId": "ZeemSavePost",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "postSafeKey",
+      "in": "path",
+      "required": true,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/TaskComplete"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/searchUser/{searchName}": {
+   "post": {
+    "operationId": "ZeemSearchUser",
+    "parameters": [
+     {
+      "name": "searchName",
+      "in": "path",
+      "required": true,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/UserCollection"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/sendInstantMessage": {
+   "post": {
+    "operationId": "ZeemSendInstantMessage",
+    "parameters": [
+     {
+      "in": "body",
+      "name": "body",
+      "required": false,
+      "schema": {
+       "$ref": "#/definitions/ChatMessage"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/TaskComplete"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/setAppInfo/{versionCode}/{versionNumber}": {
+   "post": {
+    "operationId": "ZeemSetAppInfo",
+    "parameters": [
+     {
+      "name": "versionCode",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int32"
+     },
+     {
+      "name": "versionNumber",
+      "in": "path",
+      "required": true,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/AppInfo"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/tagApproved/{userId}/{postId}/{isPublic}": {
+   "post": {
+    "operationId": "ZeemTagApproved",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "postId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "isPublic",
+      "in": "path",
+      "required": true,
+      "type": "boolean"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response"
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/taskcomplete/{userId}": {
+   "put": {
+    "operationId": "ZeemUpdateSetting",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "showTagPost",
+      "in": "query",
+      "required": false,
+      "type": "string",
+      "enum": [
+       "PUBLIC",
+       "PRIVATE",
+       "NEVER"
+      ]
+     },
+     {
+      "name": "postTag",
+      "in": "query",
+      "required": false,
+      "type": "string",
+      "enum": [
+       "PUBLIC",
+       "FRIEND",
+       "NO_ONE"
+      ]
+     },
+     {
+      "name": "anonymousTag",
+      "in": "query",
+      "required": false,
+      "type": "boolean"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/TaskComplete"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/topPost/{userId}/{mode}": {
+   "post": {
+    "operationId": "ZeemTopPost",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "mode",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "enum": [
+       "PRIVATE",
+       "PUBLIC"
+      ]
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/PostFeed"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/unBlockFriend/{userId}/{friendId}": {
+   "post": {
+    "operationId": "ZeemUnBlockFriend",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "friendId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response"
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/unFollow/{userId}/{followId}": {
+   "post": {
+    "operationId": "ZeemUnFollow",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "followId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response"
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/user/{userId}": {
+   "get": {
+    "operationId": "ZeemGetUser",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/User"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/useralert/{userId}": {
+   "get": {
+    "operationId": "ZeemGetUpdationAlert",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/UserAlert"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/usercollection/{postSafeKey}": {
+   "get": {
+    "operationId": "ZeemGetPostStar",
+    "parameters": [
+     {
+      "name": "postSafeKey",
+      "in": "path",
+      "required": true,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/UserCollection"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/usercollection/{userId}/{postType}/{isAnonymous}": {
+   "get": {
+    "operationId": "ZeemGetMentionUser",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "postType",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "enum": [
+       "PRIVATE",
+       "PUBLIC"
+      ]
+     },
+     {
+      "name": "isAnonymous",
+      "in": "path",
+      "required": true,
+      "type": "boolean"
+     },
+     {
+      "name": "searchName",
+      "in": "query",
+      "required": false,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/UserCollection"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/usercollection/{userId}/{relation}": {
+   "get": {
+    "operationId": "ZeemGetRelation",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "relation",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "enum": [
+       "FRIEND",
+       "FOLLOWER",
+       "FOLLOWING",
+       "BLOCK_FRIEND",
+       "PUBLIC"
+      ]
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/UserCollection"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/userfriendrequestcollection/{userId}": {
+   "get": {
+    "operationId": "ZeemGetFriendRequest",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/UserFriendRequestCollection"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/userlistcollection/{userId}": {
+   "get": {
+    "operationId": "ZeemGetUserList",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/UserListCollection"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/userprofile/{userId}": {
+   "get": {
+    "operationId": "ZeemGetUserProfile",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response",
+      "schema": {
+       "$ref": "#/definitions/UserProfile"
+      }
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/void/{myUserId}": {
+   "put": {
+    "operationId": "ZeemUpdateProfile",
+    "parameters": [
+     {
+      "name": "myUserId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "fullName",
+      "in": "query",
+      "required": false,
+      "type": "string"
+     },
+     {
+      "name": "profilePic",
+      "in": "query",
+      "required": false,
+      "type": "string"
+     },
+     {
+      "name": "email",
+      "in": "query",
+      "required": false,
+      "type": "string"
+     },
+     {
+      "name": "status",
+      "in": "query",
+      "required": false,
+      "type": "string"
+     },
+     {
+      "name": "dob",
+      "in": "query",
+      "required": false,
+      "type": "integer",
+      "format": "int32"
+     },
+     {
+      "name": "gender",
+      "in": "query",
+      "required": false,
+      "type": "string",
+      "enum": [
+       "M",
+       "F"
+      ]
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response"
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  },
+  "/zeem/v1/void/{userId}/{lat}/{lng}": {
+   "put": {
+    "operationId": "ZeemUpdateUserLocation",
+    "parameters": [
+     {
+      "name": "userId",
+      "in": "path",
+      "required": true,
+      "type": "integer",
+      "format": "int64"
+     },
+     {
+      "name": "lat",
+      "in": "path",
+      "required": true,
+      "type": "number",
+      "format": "double"
+     },
+     {
+      "name": "lng",
+      "in": "path",
+      "required": true,
+      "type": "number",
+      "format": "double"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A successful response"
+     }
+    },
+    "security": [
+     {
+      "api_key": [ ]
+     }
+    ]
+   }
+  }
+ },
+ "securityDefinitions": {
+  "api_key": {
+   "type": "apiKey",
+   "name": "key",
+   "in": "query"
+  }
+ },
+ "definitions": {
+  "CommentResponse": {
+   "properties": {
+    "commentList": {
+     "type": "array",
+     "items": {
+      "$ref": "#/definitions/CommentItem"
+     }
+    },
+    "cursor": {
+     "type": "string"
+    }
+   }
+  },
+  "User": {
+   "properties": {
+    "active": {
+     "type": "boolean"
+    },
+    "badge": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "firebaseToken": {
+     "type": "string"
+    },
+    "fullName": {
+     "type": "string"
+    },
+    "geoHash": {
+     "type": "string"
+    },
+    "phone": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "profilePic": {
+     "type": "string"
+    },
+    "userId": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "username": {
+     "type": "string"
+    }
+   }
+  },
+  "UserProfile": {
+   "properties": {
+    "anonymousTag": {
+     "type": "boolean"
+    },
+    "dob": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "email": {
+     "type": "string"
+    },
+    "followerCount": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "followingCount": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "friendCount": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "gender": {
+     "$ref": "#/definitions/Gender"
+    },
+    "postCount": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "postTag": {
+     "$ref": "#/definitions/HowTag"
+    },
+    "showTagPost": {
+     "$ref": "#/definitions/TagApproved"
+    },
+    "starCount": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "status": {
+     "type": "string"
+    },
+    "userId": {
+     "type": "integer",
+     "format": "int64"
+    }
+   }
+  },
+  "Gender": {
+   "enum": [
+    "M",
+    "F"
+   ]
+  },
+  "PostFeed": {
+   "properties": {
+    "cursor": {
+     "type": "string"
+    },
+    "feedList": {
+     "type": "array",
+     "items": {
+      "$ref": "#/definitions/FeedItem"
+     }
+    }
+   }
+  },
+  "StoryFeed": {
+   "properties": {
+    "story": {
+     "$ref": "#/definitions/Story"
+    },
+    "updatedOnHumanReadable": {
+     "type": "string"
+    },
+    "user": {
+     "$ref": "#/definitions/User"
+    }
+   }
+  },
+  "Notification": {
+   "properties": {
+    "cursor": {
+     "type": "string"
+    },
+    "notificationList": {
+     "type": "array",
+     "items": {
+      "$ref": "#/definitions/NotificationItem"
+     }
+    }
+   }
+  },
+  "ProfileView": {
+   "properties": {
+    "post": {
+     "$ref": "#/definitions/PostFeed"
+    },
+    "relationship": {
+     "$ref": "#/definitions/Relationship"
+    },
+    "user": {
+     "$ref": "#/definitions/User"
+    },
+    "userProfile": {
+     "$ref": "#/definitions/UserProfile"
+    }
+   }
+  },
+  "CommentType": {
+   "enum": [
+    "TEXT",
+    "IMAGE",
+    "AUDIO"
+   ]
+  },
+  "FeedItem": {
+   "properties": {
+    "allowComment": {
+     "type": "boolean"
+    },
+    "anonymous": {
+     "type": "boolean"
+    },
+    "caption": {
+     "type": "string"
+    },
+    "cardColor": {
+     "type": "string"
+    },
+    "commentItems": {
+     "type": "array",
+     "items": {
+      "$ref": "#/definitions/CommentItem"
+     }
+    },
+    "commentList": {
+     "type": "array",
+     "items": {
+      "$ref": "#/definitions/Comment"
+     }
+    },
+    "cover": {
+     "type": "string"
+    },
+    "expireTime": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "expireTimeHumanReadable": {
+     "type": "string"
+    },
+    "feedSafeKey": {
+     "type": "string"
+    },
+    "listCount": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "listId": {
+     "type": "string"
+    },
+    "location": {
+     "type": "string"
+    },
+    "mode": {
+     "$ref": "#/definitions/Mode"
+    },
+    "postId": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "postListId": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "postSafeKey": {
+     "type": "string"
+    },
+    "postTag": {
+     "type": "boolean"
+    },
+    "postedOn": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "postedOnHumanReadable": {
+     "type": "string"
+    },
+    "source": {
+     "type": "string"
+    },
+    "starByMe": {
+     "type": "boolean"
+    },
+    "starCount": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "taggedApproved": {
+     "type": "boolean"
+    },
+    "taggedCount": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "taggedMe": {
+     "type": "boolean"
+    },
+    "totalComments": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "type": {
+     "$ref": "#/definitions/PostType"
+    },
+    "userBadge": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "userFullName": {
+     "type": "string"
+    },
+    "userId": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "userProfilePic": {
+     "type": "string"
+    }
+   }
+  },
+  "TaskComplete": {
+   "properties": {
+    "complete": {
+     "type": "boolean"
+    }
+   }
+  },
+  "Stories": {
+   "properties": {
+    "postedOn": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "source": {
+     "type": "string"
+    },
+    "storyNum": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "type": {
+     "$ref": "#/definitions/PostType"
+    }
+   }
+  },
+  "UserCollection": {
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/definitions/User"
+     }
+    }
+   }
+  },
+  "UserList": {
+   "properties": {
+    "listId": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "listSafeKey": {
+     "type": "string"
+    },
+    "memberCount": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "name": {
+     "type": "string"
+    }
+   }
+  },
+  "StoryComment": {
+   "properties": {
+    "anonymous": {
+     "type": "boolean"
+    },
+    "commentId": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "commnetSafeKey": {
+     "type": "string"
+    },
+    "postedOn": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "source": {
+     "type": "string"
+    },
+    "storyNum": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "taggedUser": {
+     "type": "array",
+     "items": {
+      "type": "integer",
+      "format": "int64"
+     }
+    },
+    "type": {
+     "$ref": "#/definitions/CommentType"
+    },
+    "userId": {
+     "type": "integer",
+     "format": "int64"
+    }
+   }
+  },
+  "Story": {
+   "properties": {
+    "mode": {
+     "$ref": "#/definitions/Mode"
+    },
+    "stories": {
+     "type": "array",
+     "items": {
+      "$ref": "#/definitions/Stories"
+     }
+    },
+    "storiesCount": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "storyId": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "storySafeKey": {
+     "type": "string"
+    },
+    "updatedOn": {
+     "type": "integer",
+     "format": "int64"
+    }
+   }
+  },
+  "UserFriendRequestCollection": {
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/definitions/UserFriendRequest"
+     }
+    }
+   }
+  },
+  "Comment": {
+   "properties": {
+    "anonymous": {
+     "type": "boolean"
+    },
+    "commentId": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "commentStar": {
+     "type": "array",
+     "items": {
+      "type": "integer",
+      "format": "int64"
+     }
+    },
+    "commnetSafeKey": {
+     "type": "string"
+    },
+    "postedOn": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "source": {
+     "type": "string"
+    },
+    "starCount": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "taggedUser": {
+     "type": "array",
+     "items": {
+      "type": "integer",
+      "format": "int64"
+     }
+    },
+    "type": {
+     "$ref": "#/definitions/CommentType"
+    },
+    "userId": {
+     "type": "integer",
+     "format": "int64"
+    }
+   }
+  },
+  "StoryFeedCollection": {
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/definitions/StoryFeed"
+     }
+    }
+   }
+  },
+  "PostType": {
+   "enum": [
+    "CARD",
+    "IMAGE",
+    "AUDIO",
+    "VIDEO",
+    "GIF",
+    "TALKING_PHOTO",
+    "STORY"
+   ]
+  },
+  "ChatMessage": {
+   "properties": {
+    "chatAnonymous": {
+     "type": "string"
+    },
+    "chatTitle": {
+     "type": "string"
+    },
+    "instantChat": {
+     "type": "boolean"
+    },
+    "isAnonymous": {
+     "type": "string"
+    },
+    "messageId": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "messageReceived": {
+     "type": "string"
+    },
+    "messageText": {
+     "type": "string"
+    },
+    "profilePic": {
+     "type": "string"
+    },
+    "receiverToken": {
+     "type": "string"
+    },
+    "senderToken": {
+     "type": "string"
+    },
+    "username": {
+     "type": "string"
+    }
+   }
+  },
+  "Post": {
+   "properties": {
+    "allowComment": {
+     "type": "boolean"
+    },
+    "anonymous": {
+     "type": "boolean"
+    },
+    "caption": {
+     "type": "string"
+    },
+    "cardColor": {
+     "type": "string"
+    },
+    "commentList": {
+     "type": "array",
+     "items": {
+      "$ref": "#/definitions/Comment"
+     }
+    },
+    "cover": {
+     "type": "string"
+    },
+    "expireTime": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "listId": {
+     "type": "string"
+    },
+    "location": {
+     "type": "string"
+    },
+    "mode": {
+     "$ref": "#/definitions/Mode"
+    },
+    "postId": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "postSafeKey": {
+     "type": "string"
+    },
+    "postTag": {
+     "type": "boolean"
+    },
+    "postedOn": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "source": {
+     "type": "string"
+    },
+    "starCount": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "taggedCount": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "totalComments": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "type": {
+     "$ref": "#/definitions/PostType"
+    }
+   }
+  },
+  "Mode": {
+   "enum": [
+    "PRIVATE",
+    "PUBLIC"
+   ]
+  },
+  "UserListCollection": {
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/definitions/UserList"
+     }
+    }
+   }
+  },
+  "AppInfo": {
+   "properties": {
+    "id": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "versionCode": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "versionNumber": {
+     "type": "string"
+    }
+   }
+  },
+  "NotificationItem": {
+   "properties": {
+    "notification": {
+     "type": "string"
+    },
+    "notificationId": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "postPic": {
+     "type": "string"
+    },
+    "postSafeKey": {
+     "type": "string"
+    },
+    "type": {
+     "$ref": "#/definitions/NotificationType"
+    },
+    "userBadge": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "userId": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "userPic": {
+     "type": "string"
+    }
+   }
+  },
+  "CommentItem": {
+   "properties": {
+    "anonymous": {
+     "type": "boolean"
+    },
+    "commentSafeKey": {
+     "type": "string"
+    },
+    "postedOnHumanReadable": {
+     "type": "string"
+    },
+    "profilePic": {
+     "type": "string"
+    },
+    "source": {
+     "type": "string"
+    },
+    "starByMe": {
+     "type": "boolean"
+    },
+    "starCount": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "type": {
+     "$ref": "#/definitions/CommentType"
+    },
+    "userBadge": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "userFullName": {
+     "type": "string"
+    },
+    "userId": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "username": {
+     "type": "string"
+    }
+   }
+  },
+  "Username": {
+   "properties": {
+    "available": {
+     "type": "boolean"
+    },
+    "suggestions": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "UserAlert": {
+   "properties": {
+    "privateFeedId": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "privateNotificationId": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "publicFeedId": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "publicNotificationId": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "userId": {
+     "type": "integer",
+     "format": "int64"
+    }
+   }
+  },
+  "Relationship": {
+   "properties": {
+    "following": {
+     "type": "boolean"
+    },
+    "relation": {
+     "type": "string"
+    }
+   }
+  },
+  "TagApproved": {
+   "enum": [
+    "PUBLIC",
+    "PRIVATE",
+    "NEVER"
+   ]
+  },
+  "NotificationType": {
+   "enum": [
+    "POST_LIKE",
+    "POST_COMMENT",
+    "STORY_COMMENT",
+    "FRIEND_REQUEST",
+    "FOLLOWER",
+    "NEW_FRIEND",
+    "LIST_POST",
+    "TAG_POST",
+    "POST_MENTION",
+    "COMMENT_MENTION",
+    "COMMENT_LIKE",
+    "POST_DELETE",
+    "REPORT_SPAM",
+    "REPORT_OTHER",
+    "REPORT_SEXUAL_CONTENT",
+    "REPORT_ANTI_RELIGION"
+   ]
+  },
+  "UserInfoHolder": {
+   "properties": {
+    "contactList": {
+     "type": "array",
+     "items": {
+      "type": "integer",
+      "format": "int64"
+     }
+    },
+    "user": {
+     "$ref": "#/definitions/User"
+    }
+   }
+  },
+  "HowTag": {
+   "enum": [
+    "PUBLIC",
+    "FRIEND",
+    "NO_ONE"
+   ]
+  },
+  "UserFriendRequest": {
+   "properties": {
+    "friendBadge": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "friendId": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "friendPhone": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "friendPic": {
+     "type": "string"
+    },
+    "requestId": {
+     "type": "integer",
+     "format": "int64"
+    },
+    "requestMessage": {
+     "type": "string"
+    }
+   }
+  },
+  "Registered": {
+   "properties": {
+    "isRegistered": {
+     "type": "boolean"
+    },
+    "user": {
+     "$ref": "#/definitions/User"
+    }
+   }
+  }
+ }
+}

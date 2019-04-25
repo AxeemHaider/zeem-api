@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+
+    <cron>
+        <url>/queue/remove_stories</url>
+        <description>Remove Stories</description>
+        <schedule>every 60 minutes</schedule>
+    </cron>
+
+    <cron>
+        <url>/queue/delete_expire_post</url>
+        <description>Delete Expire Post</description>
+        <schedule>every 50 minutes</schedule>
+    </cron>
+
+</cronentries>
